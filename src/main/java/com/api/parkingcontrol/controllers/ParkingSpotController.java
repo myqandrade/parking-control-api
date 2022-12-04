@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -23,9 +24,10 @@ public class ParkingSpotController {
 
 
     @GetMapping
-    public String hello(){
-        return "Hello world!";
+    public List<ParkingSpotModel> hello(){
+        return parkingSpotService.findAll();
     }
+
     @PostMapping
     public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto){
         var parkingSpotModel = new ParkingSpotModel();
