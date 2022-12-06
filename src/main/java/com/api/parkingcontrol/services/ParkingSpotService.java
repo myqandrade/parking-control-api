@@ -5,6 +5,8 @@ import com.api.parkingcontrol.repositories.ParkingSpotRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ParkingSpotService {
 
@@ -29,5 +31,9 @@ public class ParkingSpotService {
     @Transactional
     public ParkingSpotModel save(ParkingSpotModel parkingSpotModel){
        return parkingSpotRepository.save(parkingSpotModel);
+    }
+
+    public List<ParkingSpotModel> findAll(){
+        return parkingSpotRepository.findAll();
     }
 }
