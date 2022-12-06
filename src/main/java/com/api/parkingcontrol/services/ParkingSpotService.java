@@ -10,19 +10,21 @@ import java.util.List;
 
 @Service
 public class ParkingSpotService {
+
     @Autowired
-    static ParkingSpotRepository parkingSpotRepository;
+    static
+    ParkingSpotRepository parkingSpotRepository;
 
     public static boolean existsByCarLicensePlate(String carLicensePlate) {
         return parkingSpotRepository.existsByCarLicensePlate(carLicensePlate);
     }
 
-    public static boolean existByParkingSpotNumber(String parkingSpotNumber) {
-        return parkingSpotRepository.existByParkingSpotNumber(parkingSpotNumber);
+    public static boolean existsByParkingSpotNumber(String parkingSpotNumber) {
+        return parkingSpotRepository.existsByParkingSpotNumber(parkingSpotNumber);
     }
 
-    public static boolean existByApartmentAndBlock(String apartment, String block) {
-        return parkingSpotRepository.existByApartmentAndBlock(apartment, block);
+    public static boolean existsByApartmentAndBlock(String apartment, String block) {
+        return parkingSpotRepository.existsByApartmentAndBlock(apartment, block);
     }
 
     @Transactional
